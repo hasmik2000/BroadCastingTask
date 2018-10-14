@@ -18,6 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <!--Style css-->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <div id="app">
@@ -76,5 +82,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
