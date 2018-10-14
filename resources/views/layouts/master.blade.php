@@ -9,6 +9,7 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!--Style css-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>BroadCasting  Example</title>
@@ -16,7 +17,9 @@
 <body>
     @yield('content')
 
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
