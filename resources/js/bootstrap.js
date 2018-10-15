@@ -54,3 +54,7 @@ window.Echo = new Echo({
     cluster: 'app2',
     encrypted: true
 });
+
+$data['message'] = 'hello world';
+
+$pusher->trigger('my-channel', 'my-event', $data);

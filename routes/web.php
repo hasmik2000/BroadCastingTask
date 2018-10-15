@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Events\MessageSent;
+use App\Listeners\fetchMessages;
 
 Route::get('/', 'HomeController@index');
 
@@ -20,3 +22,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
    Route::get('/messages/user/{id}', 'MessageController@index');
 });
+
+//Route::get('/alertBox', function () {
+//   return view('fetchMessages');
+//});
+//
+//Route::get('/fireEvent', function () {
+//   event(new MessageSent());
+//});
+Route::get('message/index', 'MessageController@index');
+Route::get('message/send', 'MessageController@send');
