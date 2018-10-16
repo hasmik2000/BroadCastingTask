@@ -16,25 +16,10 @@
 </head>
 <body>
     @yield('content')
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{--<script src="https://js.pusher.com/4.3/pusher.min.js"></script>--}}
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-    <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    {{--<script src="{{ asset('js/script.js') }}"></script>--}}
-    <script>
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('c2e66bc35118b836eed8', {
-            cluster: 'ap2',
-            forceTLS: true
-        });
-
-        var channel = pusher.subscribe('user.{toUserId}');
-        channel.bind('MessageSent', function(data) {
-            alert(JSON.stringify(data));
-        });
-    </script>
 </body>
 </html>

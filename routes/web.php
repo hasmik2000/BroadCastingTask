@@ -20,7 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
-   Route::get('/messages/user/{id}', 'MessageController@index');
+   Route::get('/messages/user/{id}', 'MessageController@fetch');
+   Route::post('/messages/user/{id}', 'MessageController@send');
 });
 
 //Route::get('/alertBox', function () {
@@ -30,5 +31,5 @@ Route::middleware('auth')->group(function () {
 //Route::get('/fireEvent', function () {
 //   event(new MessageSent());
 //});
-Route::get('message/index', 'MessageController@index');
-Route::get('message/send', 'MessageController@send');
+//Route::get('message/index', 'MessageController@index');
+//Route::get('message/send', 'MessageController@send');

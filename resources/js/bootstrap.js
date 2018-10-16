@@ -55,6 +55,6 @@ window.Echo = new Echo({
     encrypted: true
 });
 
-$data['message'] = 'hello world';
-
-$pusher->trigger('my-channel', 'my-event', $data);
+// $data['message'] = 'hello world';
+//
+// $pusher->trigger('my-channel', 'my-event', $data);
