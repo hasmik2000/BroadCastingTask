@@ -37,6 +37,12 @@ const app = new Vue({
                 this.message = ''
             }
         }
+    },
+    mounted() {
+        Echo.private('chat')
+            .listen('MessageSent', (e) => {
+            console.log(e);
+        });
     }
 });
 // data: {

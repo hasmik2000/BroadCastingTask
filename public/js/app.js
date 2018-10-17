@@ -24897,6 +24897,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 this.message = '';
             }
         }
+    },
+    mounted: function mounted() {
+        Echo.private('chat').listen('MessageSent', function (e) {
+            console.log(e);
+        });
     }
 });
 // data: {
@@ -24987,7 +24992,7 @@ window.Pusher = __webpack_require__(38);
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
   broadcaster: 'pusher',
   key: 'c2e66bc35118b836eed8',
-  cluster: 'app2',
+  cluster: 'ap2',
   encrypted: true
 });
 
