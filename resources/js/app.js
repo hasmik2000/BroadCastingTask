@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+window.axios = require('axios');
+
 import Vue from 'vue'
 import VueChatScroll from 'vue-chat-scroll'
 Vue.use(VueChatScroll)
@@ -23,51 +25,45 @@ Vue.component('message', require('./components/MessageComponent.vue'));
 // Vue.component('sent-message', require('./components/SentComponent.vue'));
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        message: '',
-        chat: {
-            message: []
-        }
-    },
-    methods: {
-        send() {
-            if  (this.message.length != 0) {
-                this.chat.message.push(this.message);
-                this.message = ''
-            }
-        }
-    },
-    mounted() {
-        Echo.private('chat')
-            .listen('MessageSent', (e) => {
-            console.log(e);
-        });
-    }
+    el: '#app'
+    // data: {
+    //     messages: []
+    // },
+    // methods: {
+    //     addMessage: function(message){
+    //         // this.messages.push(message);
+    //         console.log()
+    //     }
+    // }
+    // data: {
+    //     message: '',
+    //     chat: {
+    //         message: [],
+    //         uer: []
+    //     }
+    // },
+    // methods: {
+    //     send() {
+    //         if  (this.message.length != 0) {
+    //             this.chat.message.push(this.message);
+    //             axios.post('/send', {
+    //                 message: this.message
+    //             })
+    //                 .then(response => {
+    //                 console.log(response);
+    //             this.message = ''
+    //         })
+    //         .catch(error => {
+    //                 console.log(error);
+    //         });
+    //         }
+    //     }
+    // },
+    // mounted() {
+    //     Echo.private('chat')
+    //         .listen('MessageSent', (e) => {
+    //         this.chat.message.push(e.message);
+    //     // console.log(e);
+    // });
+    // }
 });
-// data: {
-//     messages: []
-// },
-// mounted() {
-//     this.fetchMessages();
-//     Echo.private('chats')
-//         .listen('MessageSent', (e) => {
-//             this.messages.push({
-//                 message: e.message.message,
-//                 user: e.user
-//     })
-//         })
-// },
-// methods: {
-//     addMessage(message) {
-//         this.messages.push(message)
-//         axios.post('/messages/user/{id}', message).then(response => {
-//
-//         })
-//     },
-//     fetchMessages() {
-//         axios.get('/messages/user/{id}').then(response => {
-//             this.messages = response.data
-//         })
-//     }
-// }

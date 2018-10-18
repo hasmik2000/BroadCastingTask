@@ -16,17 +16,15 @@ class MessageSent implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $message;
-    public $user;
+    public $data;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(User $user, $message)
+    public function __construct($data)
     {
-        $this->message = $message;
-        $this->user = $user;
+//        $this->data = $data;
     }
 
     /**
@@ -36,6 +34,6 @@ class MessageSent implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('fetch');
+//        return new privateChannel('chat');
     }
 }
