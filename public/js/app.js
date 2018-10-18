@@ -57298,7 +57298,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
-        //            Echo.private('chat')
+        //            Echo.private('message.{newMessage}')
         //                .listen('MessageSent', (e) => {
         //                    console.log(e);
         ////                    this.messages.push({

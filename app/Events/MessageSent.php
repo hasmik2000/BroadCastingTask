@@ -24,7 +24,7 @@ class MessageSent implements ShouldBroadcastNow
      */
     public function __construct($data)
     {
-//        $this->data = $data;
+        $this->data = $data;
     }
 
     /**
@@ -34,6 +34,6 @@ class MessageSent implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-//        return new privateChannel('chat');
+        return new privateChannel('chat');
     }
 }

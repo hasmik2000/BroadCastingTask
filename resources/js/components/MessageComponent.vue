@@ -50,7 +50,7 @@
                 },
         },
         mounted() {
-//            Echo.private('chat')
+//            Echo.private('message.{newMessage}')
 //                .listen('MessageSent', (e) => {
 //                    console.log(e);
 ////                    this.messages.push({
